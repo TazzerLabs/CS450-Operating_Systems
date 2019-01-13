@@ -1,0 +1,31 @@
+1) Explain what the outputs in the screenshot tell you about the memory addresses used by different processes.
+
+A: Depending on the order of execution for the program instances, different memory addresses will be used for each execution of the program.
+
+2)Take the PID from one of the processes from your screenshot while it is still running and do the command cat /proc/<PID>/maps. This is a memory map summarizing the address space of that process. Include this output in your write-up, formatting it so it is readable, and highlight the line containing the address from the screenshot.
+
+A:The address (601038) is within the range of the highlighted block during the execution of the program. 
+00400000-00401000 r-xp 00000000 08:11 166921903                          /home/student/agreaney/cs450/a.out
+00600000-00601000 r--p 00000000 08:11 166921903                          /home/student/agreaney/cs450/a.out
+00601000-00602000 rw-p 00001000 08:11 166921903                          /home/student/agreaney/cs450/a.out
+00c3a000-00c5b000 rw-p 00000000 00:00 0                                  [heap]
+7f31ed659000-7f31ed806000 r-xp 00000000 fd:02 1049464                    /usr/lib64/libc-2.26.so
+7f31ed806000-7f31eda05000 ---p 001ad000 fd:02 1049464                    /usr/lib64/libc-2.26.so
+7f31eda05000-7f31eda09000 r--p 001ac000 fd:02 1049464                    /usr/lib64/libc-2.26.so
+7f31eda09000-7f31eda0b000 rw-p 001b0000 fd:02 1049464                    /usr/lib64/libc-2.26.so
+7f31eda0b000-7f31eda0f000 rw-p 00000000 00:00 0
+7f31eda0f000-7f31eda34000 r-xp 00000000 fd:02 1049062                    /usr/lib64/ld-2.26.so
+7f31edbee000-7f31edbf0000 rw-p 00000000 00:00 0
+7f31edc33000-7f31edc34000 r--p 00024000 fd:02 1049062                    /usr/lib64/ld-2.26.so
+7f31edc34000-7f31edc35000 rw-p 00025000 fd:02 1049062                    /usr/lib64/ld-2.26.so
+7f31edc35000-7f31edc36000 rw-p 00000000 00:00 0
+7fffad050000-7fffad071000 rw-p 00000000 00:00 0                          [stack]
+7fffad1e4000-7fffad1e7000 r--p 00000000 00:00 0                          [vvar]
+7fffad1e7000-7fffad1e9000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+~
+
+3) Name the part of memory you just highlighted in the prior step, using the terminology from Figure 2.6 (p. 53).
+
+A: Stack
+
